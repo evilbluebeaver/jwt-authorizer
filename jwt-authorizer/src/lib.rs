@@ -42,6 +42,7 @@ where
         }
     }
 }
+
 impl<T, S> OptionalFromRequestParts<S> for JwtClaims<T>
 where
     T: DeserializeOwned + Send + Sync + Clone + 'static,
@@ -57,6 +58,7 @@ where
             .map(|claims| JwtClaims(claims.claims.clone())))
     }
 }
+
 #[cfg(feature = "aide")]
 mod aide {
 
